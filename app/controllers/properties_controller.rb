@@ -3,7 +3,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties or /properties.json
   def index
-    @properties = Property.all
+    @properties = Property.order(:name).paginate(:page => params[:page], :per_page => 4)
   end
 
   # GET /properties/1 or /properties/1.json
@@ -39,7 +39,7 @@ class PropertiesController < ApplicationController
       redirect_to root_path and return
     else
       @parameter = params[:search].downcase
-      @results = Property.where("lower(name) LIKE :search OR lower(description) LIKE :search OR (city) LIKE :search OR (address) LIKE :search", search: "%#{@parameter}%")
+      @results = Property.where("lower(name) LIKE :search OR lower(description) LIKE :search OR (city) LIKE :search OR (address) LIKE :search ", search: "%#{@parameter}%")
     end
   end
 
@@ -74,6 +74,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :description, :address, :city, :price)
+      params.require(:property).permit(:name, :description, :address, :city, :user_id, :price, images: [])
     end
 end

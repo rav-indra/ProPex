@@ -1,1 +1,46 @@
 <h1> I am  Seller </h1>
+
+<% props = Property.where(user_id: current_user.id) %>
+<h3 class="text-center">My Properties</h3>
+
+<% props.each do |property| %>
+
+  <div class="container">
+      <div class="imgg" >
+        <p style="float:left;">
+          <% if property.images.attached? %>
+                <% property.images.each do |prp|%>
+                <%= image_tag prp, height: "100px" %><br>
+                <% end %>
+          <% end %>
+        </p>
+      </div>
+      <div class="details">
+        <p>
+          <strong><%= property.name %></strong>
+        </p>
+
+        <p>
+          <strong>Description:</strong>
+          <%= property.description %>
+        </p>
+
+        <p>
+          <strong>Address:</strong>
+          <%= property.address %>
+        </p>
+
+        <p>
+          <strong>City:</strong>
+          <%= property.city %>
+        </p>
+
+        <p>
+          <strong>Price:</strong>
+          <%= property.price %>
+        </p>
+      </div>
+    </div>
+    <%= link_to "Edit this property", edit_property_path(property) %>
+    <%= button_to "Destroy this property", property, method: :delete %>
+<% end %>

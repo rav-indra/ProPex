@@ -75,3 +75,7 @@ end
 gem "devise"
 
 gem "letter_opener", group: :development
+
+# To use pagination in app
+gem 'will_paginate', '~> 3.3'
+gem 'will_paginate-bootstrap'

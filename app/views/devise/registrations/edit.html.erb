@@ -14,7 +14,7 @@
   </div>
 
   <div class="field">
-    <%= f.select :role, collection: User.role.keys.to_a %>
+    <%= f.select :role, collection: User.roles.keys.to_a %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

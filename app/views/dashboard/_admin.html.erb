@@ -1,16 +1,27 @@
 <h1> I am  Admin </h1>
-<% user = User.all %>
-<h3>All Users</h3>
-<% user.each do |u| %>
-<div>
-  <p>
-    <strong><%= u.name %></strong>
-  </p>
-  <p>
-    <%= u.email %>
-  </p>
-  <p>
-    <%= link_to "Destroy", u , method: :delete %>
-  </p>
-</div>
-<% end %>
+<% users = User.all %>
+<h3 class="text-center">All Users</h3>
+
+<table class="table table-hover" border=1 cellspacing=1 cellpadding=5 >
+  <thead>
+      <tr >
+        <strong><th scope="col">Role</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <% if current_user.admin? %> 
+          <th scope="col">Delete</th></strong>
+        <% end %>
+      </tr>
+  </thead>
+  <tbody>
+      <% users.each do |user| %>
+      <tr>
+        <th scope="row"><%= link_to image_tag(profile(user.role))%></th>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <% p user.role.eql?("admin")%>
+          <td><%= button_to "Delete", user, method: :delete %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
