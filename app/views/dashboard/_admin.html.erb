@@ -1,0 +1,16 @@
+<h1> I am  Admin </h1>
+<% user = User.all %>
+<h3>All Users</h3>
+<% user.each do |u| %>
+<div>
+  <p>
+    <strong><%= u.name %></strong>
+  </p>
+  <p>
+    <%= u.email %>
+  </p>
+  <p>
+    <%= link_to "Destroy", u , method: :delete %>
+  </p>
+</div>
+<% end %>
