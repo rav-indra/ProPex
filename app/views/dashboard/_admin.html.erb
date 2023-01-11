@@ -19,8 +19,7 @@
         <th scope="row"><%= link_to image_tag(profile(user.role))%></th>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <% p user.role.eql?("admin")%>
-          <td><%= button_to "Delete", user, method: :delete %></td>
+        <td><%= button_to "Delete", user, method: :delete, class: "btn btn-outline-danger" %></td>
       </tr>
       <% end %>
   </tbody>

@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+  position: relative;
+  margin: 0;
+}
+
+.frm form {
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #bdbdbd;
+  border-radius: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="file"],
+textarea,
+select {
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%;
+  background-color: #f6fdf9;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
+}
+
+.navv img {
+  height: 80px;
+}
+
+.role img {
+  height: 40px;
+  float: right;
+  margin-right: 50px;
+}
+
+.navbar-nav a {
+  color: black;
+  text-decoration: none;
+}
+
+.navbar-nav a:hover {
+  text-shadow: 2px 2px 5px #5dd95d;
+  color: black;
+}
+
+.dropdown-menu .dropdown-menu-left {
+  left: 0;
+  right: auto;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container:nth-of-type(even) {
+  flex-direction: column-reverse;
+}
+
+.details {
+  padding-left: 20px;
+}
+
+#myCarousel .carousel-inner img {
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+}
+
+
+/* Pagination */
+
+.pagination {
+  text-align: center;
+}
+
+.page {
+  background: white;
+  cursor: default;
+  display: inline-block;
+}
+
+.page a,
+.page span,
+.page em {
+  padding: 0.2em 0.5em;
+  display: block;
+  float: left;
+  margin-right: 1px;
+}
+
+.page .disabled {
+  color: #999999;
+  border: 1px solid #dddddd;
+}
+
+.page .current {
+  font-style: normal;
+  font-weight: bold;
+  background: #4788C7;
+  color: white;
+  border: 1px solid #2e6ab1;
+}
+
+.page a {
+  text-decoration: none;
+  color: #4788C7;
+  border: 1px solid #9aafe5;
+}
+
+.page a:hover,
+.page a:focus {
+  color: #000033;
+  border-color: #000033;
+}

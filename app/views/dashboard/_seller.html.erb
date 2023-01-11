@@ -41,6 +41,6 @@
         </p>
       </div>
     </div>
-    <%= link_to "Edit this property", edit_property_path(property) %>
-    <%= button_to "Destroy this property", property, method: :delete %>
+    <%= link_to "Edit this property", edit_property_path(property), class: "btn btn-outline-primary" %>
+    <%= button_to "Destroy this property", property, method: :delete, class: "btn btn-outline-danger" %>
 <% end %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/guest'
   get 'dashboard/index'
 
   resources :properties
