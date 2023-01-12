@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   
   resources :checkout, only: [:create]
-  post "checkout/create", to: "checkout#create",  as: "checkout_create"
+  post "checkout/create", to: "checkout#create"
   resources :properties
   devise_for :users
   root 'public#main'

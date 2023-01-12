@@ -13,7 +13,7 @@ class CheckoutController < ApplicationController
          product_data: {
            name: property.name,
          },
-         unit_amount: property.price
+         unit_amount: property.price * 100
         },
        quantity: 1
      }],
