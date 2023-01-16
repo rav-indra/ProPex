@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+
+  mount StripeEvent::Engine, at: '/webhooks'
+  
   get 'home/guest'
   get 'dashboard/index'
   
-  resources :checkout, only: [:create]
-  post "checkout/create", to: "checkout#create"
+  
+  post "webhooks/create", to: "webhooks#create"
+  post "checkouts/create", to: "checkouts#create"
   resources :properties
   devise_for :users
   root 'public#main'
@@ -11,6 +15,4 @@ Rails.application.routes.draw do
 
   get '/search', to: 'properties#search'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

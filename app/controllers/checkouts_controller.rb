@@ -1,4 +1,6 @@
-class CheckoutController < ApplicationController
+class CheckoutsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
 
   def create
     p 111111111111111111111111111111111
@@ -18,10 +20,12 @@ class CheckoutController < ApplicationController
        quantity: 1
      }],
       mode: 'payment',
-      metadata: {product_id: property.id},
+      metadata: {property_id: params[:property_id]},
       success_url: root_url,
-      cancel_url: root_url,
+      cancel_url: "https://1ca4-2401-4900-1f3f-190d-f18d-5517-ee59-c309.ngrok.io" + '/dashboard/index',
     })
+    p 7777777777777
+    p @session
     redirect_to @session.url, allow_other_host: true
     # respond_to do |format|
     #   format.js

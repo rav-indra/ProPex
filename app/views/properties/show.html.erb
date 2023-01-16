@@ -6,7 +6,7 @@
     <%= button_to "Destroy this property", @property, method: :delete %>|
   <% end %>
   <% if current_user.buyer? %>
-    <%= button_to "Buy Now", checkout_create_path, params: {id: @property.id}, remote: true %>
+    <%= button_to "Buy Now", checkouts_create_path, data: { turbo: false }, params: {id: @property.id}, remote: true, method: :post %>
   <% end %>
   <%= link_to "Back to properties", properties_path %>
 </div>

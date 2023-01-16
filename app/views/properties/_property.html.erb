@@ -33,6 +33,11 @@
         <strong>Price:</strong>
         <%= number_to_currency(property.price, :unit=>'₹') %>
       </p>
+
+      <p>
+        <strong>Is Sold?:</strong>
+        <%= property.is_paid %>
+      </p>
     </div>
   </div>
 </div>
