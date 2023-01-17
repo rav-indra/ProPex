@@ -9,6 +9,7 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <% if current_user.admin? %> 
+          <th scope="col">Edit</th></strong>
           <th scope="col">Delete</th></strong>
         <% end %>
       </tr>
@@ -19,7 +20,9 @@
         <th scope="row"><%= link_to image_tag(profile(user.role))%></th>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= button_to "Delete", user, method: :delete, class: "btn btn-outline-danger" %></td>
+        <%= user.id %>
+        <td><%= button_to "Edit", edit_user_registration_path(user), class: "btn btn-outline-secondary" %></td>
+        <td><%= button_to "Delete", User.find(user.id), method: :delete, class: "btn btn-outline-danger" %></td>
       </tr>
       <% end %>
   </tbody>

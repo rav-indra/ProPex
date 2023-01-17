@@ -1,5 +1,4 @@
-
-<% props = Property.where(:is_paid => true) %>
+<% props = Property.where(buyer_id: current_user.id) %>
 <h3 class="text-center">My Properties</h3>
 
 <% props.each do |property| %>

@@ -5,7 +5,7 @@
     <%= link_to "Edit this property", edit_property_path(@property) %> |
     <%= button_to "Destroy this property", @property, method: :delete %>|
   <% end %>
-  <% if current_user.buyer? %>
+  <% if current_user.buyer? && @property.is_paid == false %>
     <%= button_to "Buy Now", checkouts_create_path, data: { turbo: false }, params: {id: @property.id}, remote: true, method: :post %>
   <% end %>
   <%= link_to "Back to properties", properties_path %>

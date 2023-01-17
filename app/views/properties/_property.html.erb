@@ -35,8 +35,9 @@
       </p>
 
       <p>
-        <strong>Is Sold?:</strong>
-        <%= property.is_paid %>
+        <% if property.is_paid == true%>
+          <b style="color: red;">SOLD OUT</b>
+        <% end %>
       </p>
     </div>
   </div>

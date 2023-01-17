@@ -22,12 +22,17 @@ class WebhooksController < ApplicationController
       return
     end
 
+   
     # Handle the event
     case event.type
     when 'checkout.session.completed'
+      p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
       session = event.data.object
-      property = Property.find_by(id: session.metadata.property_id)
+      p session
+      property = Property.find_by(id: session.metadata.order_id)
+      p property
       property.is_paid = true
+      property.buyer_id = session.metadata.cid
       property.save!
     end
 
