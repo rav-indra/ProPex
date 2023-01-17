@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :properties
   devise_for :users
   root 'public#main'
-  resources :users
 
   get '/search', to: 'properties#search'
 
