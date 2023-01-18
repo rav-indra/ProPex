@@ -18,10 +18,12 @@
 
   <body>
   <header>
-    <% if @user %>
-      <%= render "layouts/nav/beforepublic"%>
-    <% else %>
+    <% if current_user.present? %>
+    <% p current_user%>
       <%= render "layouts/nav/public" %>
+    <% else %>
+    <% p current_user%>
+      <%= render "layouts/nav/beforepublic"%>
     <% end %>
   </header>
     <% if notice %>
