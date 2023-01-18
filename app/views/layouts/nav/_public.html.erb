@@ -55,7 +55,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.html">Prop<span class="color-b">Ex</span></a>
+      <a class="navbar-brand text-brand" href="/">Prop<span class="color-b">Ex</span></a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
@@ -67,15 +67,11 @@
           <% end %>
 
           <li class="nav-item">
-            <a class="nav-link " href="about.html"><%= link_to "Add Property", new_property_path %></a>
+            <%= link_to "All Properties", properties_path, class: "nav-link" %>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="property-grid.html">Property</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " href="blog-grid.html">Blog</a>
+            <%= link_to "About", public_about_path, class: "nav-link " %>
           </li>
 
           <li class="nav-item">
