@@ -40,6 +40,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <%= session_path(resource_name) %>
+      <%= user_session_path %>
       <div style="text-align:center;"><%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <%= f.label :email %><br />

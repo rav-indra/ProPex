@@ -19,10 +19,10 @@
   <body>
   <header>
     <% if current_user.present? %>
-    <% p current_user%>
+      <% p current_user%>
       <%= render "layouts/nav/public" %>
     <% else %>
-    <% p current_user%>
+      <% p current_user%>
       <%= render "layouts/nav/beforepublic"%>
     <% end %>
   </header>
