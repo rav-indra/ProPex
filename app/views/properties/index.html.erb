@@ -1,40 +1,47 @@
-<span class="input-group rounded" style="float:left; margin-left:auto; margin:right: auto;" >
-  <%= form_tag(search_path, :method => "get") do %>
-    <span><%= text_field_tag :search, params[:search], class: "form-control rounded", placeholder: "Search..." %></span>
-  <% end %>
-</span>
-<!-- ======= Intro Single ======= -->
-<section class="intro-single">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-lg-8">
-        <div class="title-single-box">
-          <h1 class="title-single">Our Amazing Properties</h1>
-          <span class="color-text-a">Grid Properties</span>
+<main id="main">
+    <!-- ======= Intro Single ======= -->
+    <section class="intro-single">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-8">
+            <div class="title-single-box">
+              <h1 class="title-single">Our Amazing Properties</h1>
+              <span class="color-text-a">Grid Properties</span>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="#">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Properties Grid
+                </li>
+              </ol>
+            </nav>
+          </div>
         </div>
       </div>
-      <div class="col-md-12 col-lg-4">
-        <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="#">Home</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">
-              Properties Grid
-            </li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-  </div>
-</section><!-- End Intro Single-->
+    </section><!-- End Intro Single-->
 
-<div id="properties">
-  <% @properties.each do |property| %>
-    <%= render property %>
-    <p>
-      <%= link_to "Show this property", property %>
-    </p>
+<span class="input-group rounded justify-content-center">
+  <%= form_tag(search_path, :method => "get") do %>
+    <span><%= text_field_tag :search, params[:search], class: "search form-control rounded", placeholder: "Search..." ,style: "border: solid 1px #5dd95d;"%></span>
   <% end %>
-</div>
-<div class="pagination"><div class="page" style="text-align:center;"><%= will_paginate @properties, previous_label: "&laquo;", next_label: "&raquo;"  %></div></div>
+</span>
+    <!-- ======= Property Grid ======= -->
+    <section class="property-grid grid">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+          <% @properties.each do |property| %>
+            <%= render property %>
+          <% end %>
+        </div>
+      </div>
+    </section><!-- End Property Grid Single-->
+
+  </main>
+
+<div class="pagination justify-content-center"><div class="page"><%= will_paginate @properties, previous_label: "&laquo;", next_label: "&raquo;"  %></div></div>

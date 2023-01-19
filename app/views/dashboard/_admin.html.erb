@@ -22,7 +22,9 @@
         <td><%= user.email %></td>
         <%= user.id %>
         <td><%= button_to "Edit", edit_user_registration_path(user), class: "btn btn-outline-secondary" %></td>
-        <td><%= button_to "Delete", method: :delete, class: "btn btn-outline-danger" %></td>
+        <td><%= link_to "delete", user_registration_path(user), :method => :delete, :confirm => "You sure?" %></td>
+        <% p user_registration_path(user) %>
+        <td><%#= button_to "Delete", method: :delete, class: "btn btn-outline-danger" %></td>
       </tr>
       <% end %>
   </tbody>

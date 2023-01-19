@@ -90,6 +90,7 @@ select {
 
 .pagination {
   text-align: center;
+  font-size: larger;
 }
 
 .page {
@@ -115,19 +116,19 @@ select {
 .page .current {
   font-style: normal;
   font-weight: bold;
-  background: #4788C7;
+  background: #2eca6a;
   color: white;
-  border: 1px solid #2e6ab1;
+  border: 1px solid #27b45d;
 }
 
 .page a {
   text-decoration: none;
-  color: #4788C7;
-  border: 1px solid #9aafe5;
+  color: #2bd16b;
+  border: 1px solid #9ae5a0;
 }
 
 .page a:hover,
 .page a:focus {
-  color: #000033;
-  border-color: #000033;
+  color: #028313;
+  border-color: #008b15;
 }
