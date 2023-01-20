@@ -25,11 +25,11 @@
       </div>
     </section><!-- End Intro Single-->
 
-<span class="input-group rounded justify-content-center">
+<div class="input-group  rounded justify-content-center">
   <%= form_tag(search_path, :method => "get") do %>
     <span><%= text_field_tag :search, params[:search], class: "search form-control rounded", placeholder: "Search..." ,style: "border: solid 1px #5dd95d;"%></span>
   <% end %>
-</span>
+</div>
     <!-- ======= Property Grid ======= -->
     <section class="property-grid grid">
       <div class="container">

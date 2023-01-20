@@ -1,8 +1,8 @@
-<div class="col-md-4 justify-content-center">
-<div class="card-box-a card-shadow">
-  <div class="img-box-a">
+<div class="col-md-4 justify-content" style="float:left;">
+<div class="card-box-a card-shadow" style=" width:100%; height: 500px !important;">
+  <div class="img-box-a overflow-hidden">
     <% if property.images.attached? %>
-      <%= link_to image_tag(property.images[0]), class: "img-a img-fluid overflow-hidden" %>
+      <%= link_to image_tag(property.images[0]), class: "img-a img-fluid overflow-hidden " %>
     <% else %>
       <%= link_to image_tag('sorry2.jpg'), class: "img-a img-fluid" %>
     <% end %>
