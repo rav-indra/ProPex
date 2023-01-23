@@ -1,6 +1,6 @@
-<h2>Resend confirmation instructions</h2>
+<h2 style="margin-top:150px; text-align:center;">Resend confirmation instructions</h2>
 
-<div class = "frm"><%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+<div class = "frm text-center"><%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -9,7 +9,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+    <%= f.submit "Resend confirmation instructions", class: "btn btn-outline-success" %>
   </div>
 <% end %>
 

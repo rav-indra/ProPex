@@ -1,12 +1,186 @@
-<%= render @property %>
+<div class="container">
+  <div class="col-md-4">
+    <div class="card-box-a card-shadow" style="border-radius:25px 10px; width:95%; height: 500px !important;">
+      <div class="img-box-a overflow-hidden">
+        <% if @property.images.attached? %>
+          <%= link_to image_tag(@property.images[0], :height=> 500,:width=>600, :crop=>"crop"), class: "img-a img-fluid overflow-hidden " %>
+        <% else %>
+          <%= link_to image_tag('sorry2.jpg'), class: "img-a img-fluid" %>
+        <% end %>
+        <%#= link_to image_tag('Propes/b3.png'), class: "img-a img-fluid" %>
+        <%# <img src="assets/img/property-2.jpg" alt="" class="img-a img-fluid"> %>
+      </div>
+      <div class="card-overlay">
+        <div class="card-overlay-a-content">
+          <div class="card-header-a">
+            <h2 class="card-title-a">
+              <a href="#"><%= @property.name %></a>
+            </h2>
+          </div>
+          <div class="card-body-a">
+            <div class="price-box d-flex">
+              <span class="price-a"><%= number_to_currency(@property.price, :unit=>'₹') %></span>
+            </div>
+              <%= link_to "Show this property", @property, class: "link-a" %>
+          </div>
+          <div class="card-footer-a" >
+            <ul class="card-info d-flex justify-content-center">
+              <li>
+                <h4 class="card-info-title text-center">City</h4>
+                <span><%= @property.city %>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><br/><br/>
 
-<div>
-  <% if current_user.id == @property.user_id %>
-    <%= link_to "Edit this property", edit_property_path(@property) %> |
-    <%= button_to "Destroy this property", @property, method: :delete %>|
-  <% end %>
-  <% if current_user.buyer? && @property.is_paid == false %>
-    <%= button_to "Buy Now", checkouts_create_path, data: { turbo: false }, params: {id: @property.id}, remote: true, method: :post %>
-  <% end %>
-  <%= link_to "Back to properties", properties_path %>
+  <%# Details %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row justify-content-between">
+        <div class="col-md-5 col-lg-4">
+          <div class="property-price d-flex justify-content-center foo">
+            <div class="card-header-c d-flex">
+              <div class="card-box-ico">
+                <span class="bi bi-cash">₹</span>
+              </div>
+              <div class="card-title-c align-self-center">
+                <h5 class="title-c"><%= number_to_currency(@property.price, :unit=>'') %></h5>
+              </div>
+            </div>
+          </div>
+          <div class="property-summary">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="title-box-d section-t4">
+                  <h3 class="title-d">Quick Summary</h3>
+                </div>
+              </div>
+            </div>
+            <div class="summary-list">
+              <ul class="list">
+                <li class="d-flex justify-content-between">
+                  <strong>Property ID:</strong>
+                  <span><%= @property.id %></span>
+                </li>
+                <li class="d-flex justify-content-between">
+                  <strong>Location:</strong>
+                  <span><%= @property.city %></span>
+                </li>
+                <li class="d-flex justify-content-between">
+                  <strong>Status:</strong>
+                  <span>
+                    <% if @property.is_paid == false %>
+                      <span style="color: green;">UNSOLD</span>
+                    <% else %>
+                      <span style="color: red;">SOLD</span>
+                    <% end %>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 col-lg-7 section-md-t3">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="title-box-d">
+                <h3 class="title-d">Property Description</h3>
+              </div>
+            </div>
+          </div>
+          <div class="property-description">
+            <p class="description color-text-a">
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
+              neque, auctor sit amet
+              aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta.
+              Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt
+              nibh pulvinar quam id dui posuere blandit.
+            </p>
+            <p class="description color-text-a no-margin">
+              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget
+              malesuada. Quisque velit nisi,
+              pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="col-md-12">
+      <div class="row section-t3">
+        <div class="col-sm-12">
+          <div class="title-box-d">
+            <h3 class="title-d">Contact Agent</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <div class="property-agent">
+            <h4 class="title-agent"><%= @property.user.name %></h4>
+            <p class="color-text-a">
+              Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
+              dui. Quisque velit nisi,
+              pretium ut lacinia in, elementum id enim.
+            </p>
+            <ul class="list-unstyled">
+
+              <li class="d-flex justify-content-between">
+                <strong>Phone:</strong>
+                <span class="color-text-a">(222) 4568932</span>
+              </li>
+              <li class="d-flex justify-content-between">
+                <strong>Mobile:</strong>
+                <span class="color-text-a">777 287 378 737</span>
+              </li>
+              <li class="d-flex justify-content-between">
+                <strong>Email:</strong>
+                <span class="color-text-a"><%= @property.user.email %></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <div class="property-contact">
+            <form class="form-a">
+              <div class="row">
+                <div class="col-md-12 mb-1">
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-lg form-control-a" id="inputName" placeholder="Name *" required="">
+                  </div>
+                </div>
+                <div class="col-md-12 mb-1">
+                  <div class="form-group">
+                    <input type="email" class="form-control form-control-lg form-control-a" id="inputEmail1" placeholder="Email *" required="">
+                  </div>
+                </div>
+                <div class="col-md-12 mb-1">
+                  <div class="form-group">
+                    <textarea id="textMessage" class="form-control" placeholder="Comment *" name="message" cols="45" rows="8" required=""></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                  <button type="submit" class="btn btn-a">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <% if current_user.id == @property.user_id %>
+      <%= link_to "Edit this property", edit_property_path(@property) %> |
+      <%= button_to "Destroy this property", @property, method: :delete %>|
+    <% end %>
+    <% if current_user.buyer? && @property.is_paid == false %>
+      <%= button_to "Buy Now", checkouts_create_path, data: { turbo: false }, params: {id: @property.id}, remote: true, method: :post %>
+    <% end %>
+    <%= link_to "Back to properties", properties_path %>
+  </div>
 </div>
