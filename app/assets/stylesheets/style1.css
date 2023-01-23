@@ -5,9 +5,11 @@
 * License: https://bootstrapmade.com/license/
 */
 
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 body {
   font-family: "Poppins", sans-serif;
   color: #555555;
@@ -139,7 +141,9 @@ a:hover {
   margin: 0;
 }
 
+
 /*------/ Nav Pills  /------*/
+
 .nav-pills-a {
   text-decoration: none;
 }
@@ -165,7 +169,9 @@ a:hover {
   z-index: 2;
 }
 
+
 /*------/ Bg Image /------*/
+
 .bg-image {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -173,7 +179,9 @@ a:hover {
   background-position: center center;
 }
 
+
 /*------/ List a /------*/
+
 .list-a {
   text-decoration: none;
   display: inline-block;
@@ -206,7 +214,9 @@ a:hover {
   left: 0;
 }
 
+
 /*------/ Pagination-a /------*/
+
 .pagination-a {
   text-decoration: none;
 }
@@ -257,7 +267,9 @@ a:hover {
   font-size: 1.3rem;
 }
 
+
 /*------/ Icon Box /------*/
+
 .icon-box .icon-box-icon {
   display: table-cell;
   vertical-align: top;
@@ -271,7 +283,9 @@ a:hover {
   padding-top: 18px;
 }
 
+
 /*------/ Space Padding /------*/
+
 .section-t8 {
   padding-top: 8rem;
 }
@@ -316,7 +330,9 @@ a:hover {
   }
 }
 
+
 /*------/ Title /------*/
+
 .title-wrap {
   padding-bottom: 4rem;
 }
@@ -365,7 +381,9 @@ a:hover {
   left: 0;
 }
 
+
 /*------/ Display Table & Table Cell /------*/
+
 .display-table {
   width: 100%;
   height: 100%;
@@ -377,7 +395,9 @@ a:hover {
   vertical-align: middle;
 }
 
+
 /*------/ Ul Resect /------*/
+
 .ul-resect ul,
 .box-comments ul,
 .list-a ul {
@@ -386,7 +406,9 @@ a:hover {
   margin-bottom: 0;
 }
 
+
 /*------/ Overlay /------*/
+
 .overlay-a {
   text-decoration: none;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 27%, rgba(0, 0, 0, 0.65) 90%);
@@ -466,7 +488,9 @@ a:hover {
   margin-left: 0px;
 }
 
+
 /*------/ Socials /------*/
+
 .socials-a {
   text-decoration: none;
 }
@@ -475,9 +499,11 @@ a:hover {
   margin-right: 25px;
 }
 
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
+
 .back-to-top {
   position: fixed;
   visibility: hidden;
@@ -508,7 +534,9 @@ a:hover {
   opacity: 1;
 }
 
+
 /* Prelaoder */
+
 #preloader {
   position: fixed;
   top: 0;
@@ -538,7 +566,6 @@ a:hover {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
@@ -548,15 +575,16 @@ a:hover {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
 }
 
+
 /*======================================
 //--//-->   BUTTON
 ======================================*/
+
 .btn {
   transition: 0.5s ease;
 }
@@ -612,9 +640,11 @@ a:hover {
   line-height: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Navbar
 --------------------------------------------------------------*/
+
 .navbar-default {
   transition: all 0.5s ease-in-out;
   background-color: #ffffff;
@@ -649,7 +679,6 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-
   .navbar-default.navbar-trans .nav-item,
   .navbar-default.navbar-reduce .nav-item {
     margin-left: 15px;
@@ -799,7 +828,9 @@ a:hover {
   filter: alpha(opacity=1);
 }
 
+
 /*------/ Hamburger Navbar /------*/
+
 .navbar-toggler {
   position: relative;
 }
@@ -848,9 +879,11 @@ a:hover {
   opacity: 0.9;
 }
 
+
 /*======================================
 //--//-->   BOX COLAPSE
 ======================================*/
+
 .box-collapse {
   position: fixed;
   top: 0;
@@ -966,9 +999,11 @@ a:hover {
   right: 4.2857rem;
 }
 
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 .intro {
   height: 100vh;
   position: relative;
@@ -1116,7 +1151,9 @@ a:hover {
   }
 }
 
+
 /*------/ Intro Single /------*/
+
 .intro-single {
   padding: 12rem 0 3rem;
 }
@@ -1162,11 +1199,12 @@ a:hover {
   padding-left: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Card General
 --------------------------------------------------------------*/
-@media (max-width: 767px) {
 
+@media (max-width: 767px) {
   .card-box-a,
   .card-box-b,
   .card-box-c,
@@ -1183,7 +1221,6 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-
   .grid .card-box-a,
   .grid .card-box-b,
   .grid .card-box-c,
@@ -1209,7 +1246,6 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-
   .card-box-a:hover .img-a,
   .card-box-a:hover .img-b,
   .card-box-b:hover .img-a,
@@ -1219,7 +1255,6 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-
   .card-box-a .price-a,
   .card-box-b .price-a {
     font-size: 0.9rem;
@@ -1227,7 +1262,6 @@ a:hover {
 }
 
 @media (min-width: 992px) {
-
   .card-box-a .price-a,
   .card-box-b .price-a {
     font-size: 1rem;
@@ -1258,9 +1292,11 @@ a:hover {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 27%, rgba(0, 0, 0, 0.65) 90%);
 }
 
+
 /*======================================
 //--//-->   PROPERTY - CARD-A
 ======================================*/
+
 @media (min-width: 768px) {
   .card-box-a:hover .card-overlay-a-content {
     bottom: 60px;
@@ -1289,7 +1325,6 @@ a:hover {
   .card-box-a .card-overlay-a-content {
     bottom: 65px;
   }
-
   .card-box-a .card-body-a {
     padding-bottom: 1rem;
   }
@@ -1408,7 +1443,9 @@ a:hover {
   }
 }
 
+
 /*------/ Property Grid /-----*/
+
 .property-grid .grid-option {
   text-align: right;
   margin-bottom: 2rem;
@@ -1430,7 +1467,9 @@ a:hover {
   border-color: #313131;
 }
 
+
 /*------/ Property Single /-----*/
+
 .gallery-property {
   margin-bottom: 3rem;
 }
@@ -1482,9 +1521,11 @@ a:hover {
   }
 }
 
+
 /*======================================
 //--//-->   NEWS - CARD-B
 ======================================*/
+
 .card-header-b {
   padding: 1rem;
   color: #ffffff;
@@ -1555,7 +1596,9 @@ a:hover {
   }
 }
 
+
 /*------/ News Single /------*/
+
 .post-information {
   padding: 3rem 0;
 }
@@ -1602,7 +1645,9 @@ a:hover {
   margin-left: 0.6rem;
 }
 
+
 /*------/ Comments /------*/
+
 .box-comments .list-comments li {
   padding-bottom: 3.5rem;
 }
@@ -1651,9 +1696,11 @@ a:hover {
   margin-left: 40px;
 }
 
+
 /*======================================
 //--//-->   SERVICES - CARD-C
 ======================================*/
+
 .card-box-c {
   position: relative;
 }
@@ -1710,9 +1757,11 @@ a:hover {
   }
 }
 
+
 /*======================================
 //--//-->   AGENTS - CARD-D
 ======================================*/
+
 .card-box-d .card-overlay-hover {
   transition: all 0.2s ease-in-out;
   padding: 15px 40px 15px 35px;
@@ -1825,7 +1874,9 @@ a:hover {
   transform: translateY(0);
 }
 
+
 /*------/ Agent Single /------*/
+
 .agent-info-box .socials-footer {
   margin-top: 2rem;
 }
@@ -1834,9 +1885,11 @@ a:hover {
   margin-right: 1.5rem;
 }
 
+
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+
 .section-about .title-vertical {
   position: absolute;
   letter-spacing: 0;
@@ -1947,9 +2000,11 @@ a:hover {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
+
 .testimonials-box {
   padding: 1rem 0;
 }
@@ -2000,9 +2055,11 @@ a:hover {
   color: #000000;
 }
 
+
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+
 .form-as #sendmessage {
   color: #2eca6a;
   border: 1px solid #26a356;
@@ -2127,7 +2184,6 @@ a:hover {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
@@ -2137,15 +2193,16 @@ a:hover {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
 }
 
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 .section-footer {
   padding-top: 60px;
   margin-top: 60px;
