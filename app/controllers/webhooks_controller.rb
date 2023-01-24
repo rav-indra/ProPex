@@ -1,7 +1,7 @@
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token
   skip_before_action :authenticate_user!
-  p "**************************************"
+  p '**************************************'
 
   def create
     payload = request.body.read
@@ -17,16 +17,15 @@ class WebhooksController < ApplicationController
       return
     rescue Stripe::SignatureVerificationError => e
       # Invalid signature
-      puts "Signature error"
+      puts 'Signature error'
       p e
       return
     end
 
-   
     # Handle the event
     case event.type
     when 'checkout.session.completed'
-      p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+      p '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
       session = event.data.object
       p session
       property = Property.find_by(id: session.metadata.order_id)
