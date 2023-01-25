@@ -1,45 +1,16 @@
+<h1 style="margin-top: 120px; text-align:center;">Purchased Properties</h1>
 <% props = Property.where(buyer_id: current_user.id) %>
-<h3 class="text-center">My Properties</h3>
 
-<% props.each do |property| %>
-
-  <div class="container">
-      <div class="imgg" >
-        <p style="float:left;">
-          <% if property.images.attached? %>
-                <% property.images.each do |prp|%>
-                <%= image_tag prp, height: "100px" %><br>
-                <% end %>
+<section class="property-grid grid">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 justify-content-between">
+          <% props.each do |property| %>
+            <%= render property %>
           <% end %>
-        </p>
+        </div>
       </div>
-      <div class="details">
-        <p>
-          <strong><%= property.name %></strong>
-        </p>
-
-        <p>
-          <strong>Description:</strong>
-          <%= property.description %>
-        </p>
-
-        <p>
-          <strong>Address:</strong>
-          <%= property.address %>
-        </p>
-
-        <p>
-          <strong>City:</strong>
-          <%= property.city %>
-        </p>
-
-        <p>
-          <strong>Price:</strong>
-          <%= property.price %>
-        </p>
-      </div>
-    </div>
-<% end %>
+</section><!-- End Property Grid Single-->
 
 <!-- ======= Footer ======= -->
 <section class="section-footer">

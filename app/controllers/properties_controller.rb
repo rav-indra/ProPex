@@ -3,7 +3,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties or /properties.json
   def index
-    @properties = Property.order(:name).paginate(:page => params[:page], :per_page => 3)
+    @properties = Property.order(:name).paginate(:page => params[:page], :per_page => 4)
   end
 
   # GET /properties/1 or /properties/1.json

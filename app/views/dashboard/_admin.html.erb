@@ -1,6 +1,5 @@
-<h1> I am  Admin </h1>
+<h1 style="margin-top: 120px; text-align:center;">Admin</h1>
 <% users = User.all %>
-<h3 class="text-center">All Users</h3>
 
 <table class="table table-hover" border=1 cellspacing=1 cellpadding=5 >
   <thead>
@@ -20,10 +19,8 @@
         <th scope="row"><%= link_to image_tag(profile(user.role))%></th>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <%= edit_user_registration_path(id: user.id) %>
         <td><%= button_to "Edit", edit_user_registration_path(id: user.id), class: "btn btn-outline-secondary" %></td>
         <td><%= link_to "delete", user_registration_path(user), :method => :delete, :confirm => "You sure?" %></td>
-        <% p user_registration_path(user) %>
         <td><%#= button_to "Delete", method: :delete, class: "btn btn-outline-danger" %></td>
       </tr>
       <% end %>
