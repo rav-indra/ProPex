@@ -45,6 +45,8 @@ class PropertiesController < ApplicationController
 
   # PATCH/PUT /properties/1 or /properties/1.json
   def update
+    @property = Property.find(params[:id])
+    @property.user_id = current_user.id
     respond_to do |format|
       if @property.update(property_params)
         format.html { redirect_to property_url(@property), notice: "Property was successfully updated." }

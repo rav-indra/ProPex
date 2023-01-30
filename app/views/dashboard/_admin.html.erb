@@ -7,10 +7,6 @@
         <strong><th scope="col">Role</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
-        <% if current_user.admin? %> 
-          <th scope="col">Edit</th></strong>
-          <th scope="col">Delete</th></strong>
-        <% end %>
       </tr>
   </thead>
   <tbody>
@@ -19,9 +15,9 @@
         <th scope="row"><%= link_to image_tag(profile(user.role))%></th>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= button_to "Edit", edit_user_registration_path(id: user.id), class: "btn btn-outline-secondary" %></td>
-        <td><%= link_to "delete", user_registration_path(user), :method => :delete, :confirm => "You sure?" %></td>
-        <td><%#= button_to "Delete", method: :delete, class: "btn btn-outline-danger" %></td>
+        <%#= button_to "Edit", edit_user_registration_path(id: user.id), class: "btn btn-outline-secondary" %>
+        <%#= link_to "delete", user_registration_path(user), :method => :delete, :confirm => "You sure?" %>
+        <%#= button_to "Delete", method: :delete, class: "btn btn-outline-danger" %>
       </tr>
       <% end %>
   </tbody>
