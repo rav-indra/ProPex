@@ -1,6 +1,6 @@
-<div class="container" style="margin-top:30px;height:500px; overflow:hidden;">
+<div class="container1" style="margin-top:30px;height:500px; overflow:hidden;text-align:center;">
   <%# Slider %>
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div id="carouselExampleFade" class="carousel slide carousel-fade mx-auto" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-inner">
       <% @property.images.each do |img| %>
         <div class="carousel-item active">
@@ -19,7 +19,6 @@
   </div>
 </div>
 
-<div class="text-black text-center" style="font-size:50px"><p><%= @property.name %></p></div>
 
   <%# Details %>
 <div class="container" style="margin-top:50px;">
