@@ -5,19 +5,13 @@
           <nav class="nav-footer">
             <ul class="list-inline">
               <li class="list-inline-item">
-                <a href="#">Home</a>
+                <%= link_to "Home", root_path %>
               </li>
               <li class="list-inline-item">
-                <a href="#">About</a>
+                <%= link_to "Properties", properties_path %>
               </li>
               <li class="list-inline-item">
-                <a href="#">Property</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Blog</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
+                <%= link_to "About", public_about_path %>
               </li>
             </ul>
           </nav>  
@@ -26,9 +20,6 @@
               © Copyright
               <span class="color-a">PropEx</span> All Rights Reserved.
             </p>
-          </div>
-          <div class="credits">
-            Designed by Ravindra using <a href="https://bootstrapmade.com/">BootstrapMade</a>
           </div>
         </div>
       </div>

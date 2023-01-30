@@ -6,7 +6,7 @@
       <span></span>
       <span></span>
     </button>
-    <a class="navbar-brand text-brand" href="/">Prop<span class="color-b">Ex</span></a>
+    <a class="navbar-brand text-brand fs-1" href="/">Prop<span class="color-b">Ex</span></a>
 
     <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
       <ul class="navbar-nav ">
@@ -20,7 +20,7 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to "About", public_about_path, class: "nav-link " %>
+          <%= link_to "About", public_about_path, class: "nav-link" %>
         </li>
       </ul>
     </div>
@@ -54,7 +54,7 @@
             </div>
             <%= f.submit 'Sign in', class: 'btn btn-primary mb-4' %>
           <% end %>
-        <%= render "devise/shared/links" %>
+        <%= render "devise/shared/links" %><br/>
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %><br/>
       </div>
     </div>
   </div>

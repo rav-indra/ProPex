@@ -1,24 +1,25 @@
-<div class="container1" style="margin-top:30px;height:500px; overflow:hidden;text-align:center;">
+<div class="container1" style="margin-top:30px;height:900px; overflow:hidden;text-align:center;">
   <%# Slider %>
   <div id="carouselExampleFade" class="carousel slide carousel-fade mx-auto" data-bs-ride="carousel" data-bs-interval="5000">
       <div class="carousel-inner">
       <% @property.images.each do |img| %>
         <div class="carousel-item active">
-          <%= link_to image_tag(img, height: 500, width: 800) %>
+          <%= link_to image_tag(img, height: "100%", width: "100%") %>
         </div>
       <%end %>
       </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
   </div>
 </div>
 
+<div class="text-center text-capitalize mt-2 fs-1 text-dark "><%= @property.name %></div>
 
   <%# Details %>
 <div class="container" style="margin-top:50px;">
@@ -49,7 +50,7 @@
               <ul class="list">
                 <li class="d-flex justify-content-between">
                   <strong>Location:</strong>
-                  <span><%= @property.city %></span>
+                  <span><%= @property.address %><br/><%= @property.city %></span>
                 </li>
                 <li class="d-flex justify-content-between">
                   <strong>Status:</strong>
@@ -62,6 +63,25 @@
                   </span>
                 </li>
               </ul>
+            </div>
+            <%# Buttons %>
+            <div class="text-center ">
+              <div class="btn-group d-flex justify-content-between">
+                <%= link_to properties_path do %>
+                  <span title="Back" ><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="3em" width="3em" xmlns="http://www.w3.org/2000/svg"><path d="M21 11L6.414 11 11.707 5.707 10.293 4.293 2.586 12 10.293 19.707 11.707 18.293 6.414 13 21 13z"></path></svg></span>
+                <% end %>
+                <% if current_user.id == @property.user_id %>
+                  <%= button_to edit_property_path(@property), class: "btn btn-outline-secondary", method: :get do%> 
+                    <span title="Edit"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32zm-622.3-84c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 0 0 0-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 0 0 9.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9z"></path></svg></span>
+                  <% end %>
+                  <%= button_to @property, class: "btn btn-outline-danger", method: :delete do %>
+                    <span title="Delete"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M4 8h16v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8zm2 2v10h12V10H6zm3 2h2v6H9v-6zm4 0h2v6h-2v-6zM7 5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v2h5v2H2V5h5zm2-1v1h6V4H9z"></path></g></svg></span>
+                  <% end %>
+                <% end %>
+                <% if current_user.buyer? && @property.is_paid == false %>
+                  <%= button_to "Buy Now", checkouts_create_path, class:"btn btn-outline-success mt-1", data: { turbo: false }, params: {id: @property.id}, remote: true, method: :post %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -76,17 +96,6 @@
           <div class="property-description">
             <p class="description color-text-a">
             <p><%= @property.description %></p>
-              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
-              neque, auctor sit amet
-              aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta.
-              Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt
-              nibh pulvinar quam id dui posuere blandit.
-            </p>
-            <p class="description color-text-a no-margin">
-              Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget
-              malesuada. Quisque velit nisi,
-              pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
-            </p>
           </div>
         </div>
       </div>      
@@ -112,7 +121,7 @@
               </li>
               <li class="d-flex justify-content-between">
                 <strong>Email:</strong>
-                <span class="color-text-a"><%= @property.user.email %></span>
+                <span class="color-text-a"><%= mail_to @property.user.email, @property.user.email, target: '_blank' %></span>
               </li>
             </ul>
           </div>
@@ -121,29 +130,10 @@
   </div>
 </div>
 
-<div class="text-center">
-  <div class="btn-group">
-  <%= link_to properties_path do %>
-    <span title="Back" ><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="3em" width="3em" xmlns="http://www.w3.org/2000/svg"><path d="M21 11L6.414 11 11.707 5.707 10.293 4.293 2.586 12 10.293 19.707 11.707 18.293 6.414 13 21 13z"></path></svg></span>
-  <% end %>
-  <% if current_user.id == @property.user_id %>
-    <%= button_to edit_property_path(@property), class: "btn btn-outline-secondary", method: :get do%> 
-      <span title="Edit"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><path d="M880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32zm-622.3-84c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 0 0 0-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 0 0 9.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9z"></path></svg></span>
-    <% end %>
-    <%= button_to @property, class: "btn btn-outline-danger", method: :delete do %>
-      <span title="Delete"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M4 8h16v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8zm2 2v10h12V10H6zm3 2h2v6H9v-6zm4 0h2v6h-2v-6zM7 5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v2h5v2H2V5h5zm2-1v1h6V4H9z"></path></g></svg></span>
-    <% end %>
-  <% end %>
-  <% if current_user.buyer? && @property.is_paid == false %>
-    <%= button_to "Buy Now", checkouts_create_path, class:"btn btn-outline-success", data: { turbo: false }, params: {id: @property.id}, remote: true, method: :post %>
-  <% end %>
-</div>
-</div>
-
   <!-- ======= Footer ======= -->
 <section class="section-footer">
   <div class="container">
-    <div class="row">
+    <div class="row text-center justify-content-center">
       <div class="col-sm-12 col-md-4">
         <div class="widget-a">
           <div class="w-header-a">
@@ -161,67 +151,7 @@
                 <span class="color-text-a">Phone .</span> +91 12345 67890
               </li>
               <li class="color-a">
-                <span class="color-text-a">Email .</span> contact@propex.com
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-4 section-md-t3">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand">The Company</h3>
-          </div>
-          <div class="w-body-a">
-            <div class="w-body-a">
-              <ul class="list-unstyled">
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Site Map</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Legal</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Agent Admin</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Careers</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Affiliate</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-4 section-md-t3">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand">International sites</h3>
-          </div>
-          <div class="w-body-a">
-            <ul class="list-unstyled">
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Venezuela</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">China</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Hong Kong</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Argentina</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Singapore</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Philippines</a>
+                <span class="color-text-a">Email .</span> <%= mail_to "contact@propex.com", "contact@propex.com", target: '_blank' %>
               </li>
             </ul>
           </div>
