@@ -1,24 +1,10 @@
-# README
+# PropEx
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PropEx is a marketplace for selling and buying real-estate properties.
+Where you can...
 
-Things you may want to cover:
+* List your peoperty with details and images to sell as a seller.
 
-* Ruby version
+* You can purchase any property as a buyer.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* You can join us as admin to keep track on buy and sell.
