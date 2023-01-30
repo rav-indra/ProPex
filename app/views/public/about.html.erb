@@ -3,10 +3,10 @@
 <!-- ======= Intro Single ======= -->
 <section class="intro-single">
   <div class="container" style="margin-top:-170px">
-    <div class="row">
+    <div class="row" style="width: 100%;">
       <div class="col-md-12 col-lg-8">
         <div class="title-single-box">
-          <h1 class="title-single">The Best platform to list or buy Property.</h1>
+          <h1 class="title-single">The Best platform to list or <br/>buy Property.</h1>
         </div>
       </div>
       <div class="col-md-12 col-lg-4">
@@ -30,7 +30,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 position-relative">
-        <div class="about-img-box">
+        <div class="about-img-box" style="margin-left:50px;">
           <%= link_to image_tag('Propes/f1.jpg') %>
         </div>
         <div class="sinse-box">
@@ -44,9 +44,9 @@
       <div class="col-md-12 section-t8 position-relative">
         <div class="row">
           <div class="col-md-6 col-lg-5">
-            <%= link_to image_tag('img/plan2.jpg',width: 600) %>
+            <%= link_to image_tag('img/plan2.jpg',width: 650) %>
           </div>
-          <div class="col-lg-2  d-none d-lg-block position-relative mt-5">
+          <div class="col-lg-2  d-none d-lg-block position-relative" style="margin-top: 60px;">
             <div class="title-vertical d-flex justify-content-start">
               <span>EstateAgency Exclusive Property</span>
             </div>
@@ -180,7 +180,7 @@
 <!-- ======= Footer ======= -->
 <section class="section-footer">
   <div class="container">
-    <div class="row">
+    <div class="row text-center justify-content-center">
       <div class="col-sm-12 col-md-4">
         <div class="widget-a">
           <div class="w-header-a">
@@ -198,67 +198,7 @@
                 <span class="color-text-a">Phone .</span> +91 12345 67890
               </li>
               <li class="color-a">
-                <span class="color-text-a">Email .</span> contact@propex.com
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-4 section-md-t3">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand">The Company</h3>
-          </div>
-          <div class="w-body-a">
-            <div class="w-body-a">
-              <ul class="list-unstyled">
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Site Map</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Legal</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Agent Admin</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Careers</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Affiliate</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-4 section-md-t3">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand">International sites</h3>
-          </div>
-          <div class="w-body-a">
-            <ul class="list-unstyled">
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Venezuela</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">China</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Hong Kong</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Argentina</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Singapore</a>
-              </li>
-              <li class="item-list-a">
-                <i class="bi bi-chevron-right"></i> <a href="#">Philippines</a>
+                <span class="color-text-a">Email .</span> <%= mail_to "contact@propex.com", "contact@propex.com" %>
               </li>
             </ul>
           </div>
