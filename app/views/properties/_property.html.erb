@@ -15,10 +15,11 @@
           </h2>
         </div>
         <div class="card-body-a">
-          <div class="price-box d-flex">
-            <span class="price-a"><%= number_to_currency(property.price, :unit=>'₹') %></span>
-          </div>
-          <%#= link_to "Show this property", property, class: "link-a" %>
+          <% if current_user.present? %>
+            <div class="price-box d-flex">
+              <span class="price-a"><%= number_to_currency(property.price, :unit=>'₹') %></span>
+            </div>
+          <% end %>
         </div>
         <div class="card-footer-a" >
           <ul class="card-info d-flex justify-content-center">

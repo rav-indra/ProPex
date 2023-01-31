@@ -6,7 +6,9 @@
         <div class="row">
           <div class="col-sm-12 justify-content-between">
           <% props.each do |property| %>
-            <%= render property %>
+            <%= link_to property, class: "link-a" do  %>
+              <%= render property %>
+            <% end %>
           <% end %>
         </div>
       </div>

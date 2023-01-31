@@ -1,13 +1,25 @@
 <h1 style="margin-top: 120px; text-align:center;">Listed Properties</h1>
 
 <% props = Property.where(user_id: current_user.id) %>
+<% sold =  props.where(is_paid: true) %>
+<% sum = 0%>  
+<% sold.each do |sld| %>
+  <% sum = sum + sld.price %>
+<% end %>
+<div class="text-center fs-2">
+  <span>Wallet = <%= sum %> ₹</span>|
+  <span>Total = <%= props.count %></span>|
+  <span>Sold = <%= sold.count %></span>
+</div><br/>
 
 <section class="property-grid grid">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 justify-content-between">
           <% props.each do |property| %>
-            <%= render property %>
+            <%= link_to property, class: "link-a" do  %>
+              <%= render property %>
+            <% end %>
           <% end %>
         </div>
       </div>
