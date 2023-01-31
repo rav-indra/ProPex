@@ -1,51 +1,17 @@
-<span class="input-group rounded justify-content-center">
+<div class="input-group  rounded justify-content-center" style="margin-top:170px;">
   <%= form_tag(search_path, :method => "get") do %>
-    <span><%= text_field_tag :search, params[:search], class: "form-control rounded", placeholder: "Search..." %></span>
+    <span><%= text_field_tag :search, params[:search], class: "search form-control rounded", border_radius: "50px",placeholder: "Search..." ,style: "border: solid 1px #5dd95d;" %></span>
   <% end %>
-</span>
-<h1 class="text-center">Properties</h1>
+</div>
+<h1 class="text-center">Properties</h1><br/>
 <section class="property-grid grid">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-          <% @results.each do |prop| %>
-            <div class="col-md-4 justify-content" style="float:left;">
-              <div class="card-box-a card-shadow" style=" width:100%; height: 500px !important;">
-                <div class="img-box-a overflow-hidden">
-                  <% if prop.images.attached? %>
-                    <%= link_to image_tag(prop.images[0]), class: "img-a img-fluid overflow-hidden " %>
-                  <% else %>
-                    <%= link_to image_tag('sorry2.jpg'), class: "img-a img-fluid" %>
-                  <% end %>
-                  <%#= link_to image_tag('Propes/b3.png'), class: "img-a img-fluid" %>
-                  <%# <img src="assets/img/prop-2.jpg" alt="" class="img-a img-fluid"> %>
-                </div>
-                <div class="card-overlay">
-                  <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                      <h2 class="card-title-a">
-                        <a href="#"><%= prop.name %></a>
-                      </h2>
-                    </div>
-                    <div class="card-body-a">
-                      <div class="price-box d-flex">
-                        <span class="price-a"><%= number_to_currency(prop.price, :unit=>'₹') %></span>
-                      </div>
-                        <%= link_to "Show this Property", prop, class: "link-a" %>
-                    </div>
-                    <div class="card-footer-a" >
-                      <ul class="card-info d-flex justify-content-center">
-                        <li>
-                          <h4 class="card-info-title text-center">City</h4>
-                          <span><%= prop.city %>
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="col-sm-12 d-flex" style="justify-content: space-between; flex-wrap: wrap;">
+          <% @results.each do |property| %>
+            <%= link_to property, class: "link-a" do  %>
+              <%= render property%>
+            <% end %>
           <% end %>
         </div>
     </div>

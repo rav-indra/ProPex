@@ -11,6 +11,16 @@ body {
 }
 
 .frm form {
+  border-top: 2px solid #5ea4f3;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+  background-color: #ffffff;
+  padding: 0;
+  max-width: 600px;
+  margin: auto;
+}
+
+
+/* .frm form {
   max-width: 500px;
   margin: 10px auto;
   padding: 10px 20px;
@@ -37,7 +47,7 @@ select {
   color: #8aa08d;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   margin-bottom: 30px;
-}
+} */
 
 .navv img {
   height: 80px;

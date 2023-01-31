@@ -25,7 +25,7 @@
       </div>
     </section><!-- End Intro Single-->
 
-<div class="input-group  rounded justify-content-center">
+<div class="input-group  rounded justify-content-center" style="margin-top:-100px;">
   <%= form_tag(search_path, :method => "get") do %>
     <span><%= text_field_tag :search, params[:search], class: "search form-control rounded", border_radius: "50px",placeholder: "Search..." ,style: "border: solid 1px #5dd95d;" %></span>
   <% end %>
@@ -34,7 +34,7 @@
     <section class="property-grid grid">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 justify-content-between">
+          <div class="col-sm-12 d-flex" style="justify-content: space-between; flex-wrap: wrap;">
           <% @properties.each do |property| %>
             <%= link_to property, class: "link-a" do  %>
               <%= render property %>
