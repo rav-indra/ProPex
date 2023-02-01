@@ -6,27 +6,27 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand fs-1" href="/">Prop<span class="color-b">Ex</span></a>
+      <a class="navbar-brand text-brand" href="/"><h1><b>Prop<span class="color-b">Ex</span></b></h1></a>
 
       <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
 
           <% if current_user.seller? %>
             <li class="nav-item">
-              <%= link_to "Add Property", new_property_path, class: "nav-link " %>
+              <%= link_to "Add Property", new_property_path, class: "nav-link fs-5" %>
             </li>
           <% end %>
 
           <li class="nav-item">
-            <%= link_to "All Properties", properties_path, class: "nav-link" %>
+            <%= link_to "All Properties", properties_path, class: "nav-link fs-5" %>
           </li>
 
           <li class="nav-item">
-            <%= link_to "About", public_about_path, class: "nav-link " %>
+            <%= link_to "About", public_about_path, class: "nav-link fs-5" %>
           </li>
 
           <li class="nav-item dropdown">
-            <span style="margin-top:-20px;" class="nav-link " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span style="margin-top:-20px;" class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <% if current_user.admin? %> 
                 <%= link_to image_tag('admin.png') %>
               <% elsif current_user.seller? %>
