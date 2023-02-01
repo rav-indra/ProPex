@@ -1,9 +1,6 @@
 <% props = Property.where(user_id: current_user.id) %>
-<% sold =  props.where(is_paid: true) %>
-<% sum = 0%>  
-<% sold.each do |sld| %>
-  <% sum = sum + sld.price %>
-<% end %>
+<% sold_property =  props.where(is_paid: true) %>
+
 <div class="row" style="margin-top: 130px; justify-content: center;">
   <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-success shadow h-100 py-2">
@@ -12,27 +9,30 @@
                   <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fs-5">
                           My Properties</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" style="margin-top:-30px; text-align:end; font-size:xxx-large;"><%= props.count %></div>
+                      <div class="h5 mb-0 font-weight-bold text-black" style="margin-top:-30px; text-align:end; font-size:xxx-large;"><%= props.count %></div>
                   </div>
               </div>
           </div>
       </div>
   </div> 
-
+  
   <div class="col-xl-3 col-md-6 mb-4">
+    <%= link_to dashboard_sold_path do  %>
       <div class="card border-left-success shadow h-100 py-2">
           <div class="card-body">
               <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fs-5">
                           Sold Properties</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" style="margin-top:-30px; text-align:end; font-size:xxx-large;"><%= sold.count %></div>
+                      <div class="h5 mb-0 font-weight-bold" style="margin-top:-30px; text-align:end; font-size:xxx-large;"><%= sold_property.count %></div>
                   </div>
               </div>
           </div>
       </div>
-  </div>         
+    <% end %>        
+  </div> 
 </div> 
+
 
 <h1 style="text-align:center;">Listed Properties</h1>
 
