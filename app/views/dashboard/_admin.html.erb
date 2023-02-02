@@ -1,16 +1,15 @@
-<h1 style="margin-top: 120px; text-align:center;">Admin</h1>
-<% users = User.all %>
+<h1>Admin</h1>
 
 <table class="table table-hover" border=1 cellspacing=1 cellpadding=5 >
   <thead>
-      <tr >
-        <strong><th scope="col">Role</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-      </tr>
+    <tr >
+      <strong><th scope="col">Role</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+    </tr>
   </thead>
   <tbody>
-      <% users.each do |user| %>
+    <% @users.each do |user| %>
       <tr>
         <th scope="row"><%= link_to image_tag(profile(user.role))%></th>
         <td><%= user.name %></td>
@@ -19,6 +18,6 @@
         <%#= link_to "delete", user_registration_path(user), :method => :delete, :confirm => "You sure?" %>
         <%#= button_to "Delete", method: :delete, class: "btn btn-outline-danger" %>
       </tr>
-      <% end %>
+    <% end %>
   </tbody>
 </table>

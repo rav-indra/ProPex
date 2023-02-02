@@ -19,13 +19,7 @@
 
   <body>
     <header style="margin-bottom: 120px;">
-      <% if current_user.present? %>
-        <% p current_user%>
-        <%= render "layouts/nav/public" %>
-      <% else %>
-        <% p current_user%>
-        <%= render "layouts/nav/beforepublic"%>
-      <% end %>
+      <%= render c_user(current_user.present?) %>
     </header>
       <% if notice %>
         <p style="color: green;" class="alert alert-success"><%= notice %></p>

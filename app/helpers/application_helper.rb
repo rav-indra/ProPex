@@ -1,6 +1,5 @@
 module ApplicationHelper
   # helper_method :resource_name, :resource, :devise_mapping, :resource_class
-
   def resource_name
     :user
   end
@@ -16,6 +15,7 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
   def profile(role)
     if role == "admin"
       'admin.png'
@@ -23,6 +23,14 @@ module ApplicationHelper
       'seller.png'
     else
       'buyer.png'
+    end
+  end
+
+  def c_user(value)
+    if value 
+      'layouts/nav/public'
+    else
+      'layouts/nav/beforepublic'
     end
   end
 

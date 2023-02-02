@@ -1,45 +1,46 @@
-<div class="frm"><%= form_with(model: property) do |form| %>
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-    <p style="color: red; margin-top:-20px;"><%= show_errors(@property, :name) %></p>
+<div class="frm">
+  <%= form_with(model: property) do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+      <p style="color: red; margin-top:-20px;"><%= show_errors(@property, :name) %></p>
     </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
+    <div>
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </div>
 
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
-    <p style="color: red; margin-top:-20px;" ><%= show_errors(@property, :address) %></p>
-  </div>
+    <div>
+      <%= form.label :address %>
+      <%= form.text_field :address %>
+      <p style="color: red; margin-top:-20px;" ><%= show_errors(@property, :address) %></p>
+    </div>
 
-  <div>
-    <%= form.label :city, style: "display: block" %>
-    <%= form.text_field :city %>
-    <p style="color: red; margin-top:-20px;" ><%= show_errors(@property, :city) %></p>
-  </div>
+    <div>
+      <%= form.label :city %>
+      <%= form.text_field :city %>
+      <p style="color: red; margin-top:-20px;" ><%= show_errors(@property, :city) %></p>
+    </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.number_field :price %>
-    <p style="color: red; margin-top:-20px;" ><%= show_errors(@property, :price) %></p>
-  </div>
-  
-  <div>
-  <% p current_user.id %>
-    <%= form.hidden_field :user_id, :value => current_user.id %>
-  </div>
+    <div>
+      <%= form.label :price %>
+      <%= form.number_field :price %>
+      <p style="color: red; margin-top:-20px;" ><%= show_errors(@property, :price) %></p>
+    </div>
+    
+    <div>
+    <% p current_user.id %>
+      <%= form.hidden_field :user_id, :value => current_user.id %>
+    </div>
 
-  <div>
-    <%= form.label :Images %><br>
-    <%= form.file_field :images, multiple: true %><br><br>
-  </div>
+    <div>
+      <%= form.label :Images %><br>
+      <%= form.file_field :images, multiple: true %><br><br>
+    </div>
 
-  <div style="width:40%; margin:auto;">
-    <%= form.submit class: "btn btn-outline-success text-center" %><br/><br/>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= form.submit "Submit", class: "btn btn-outline-success text-center" %><br/><br/>
+    </div>
+  <% end %>
 </div>

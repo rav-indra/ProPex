@@ -8,6 +8,4 @@ class User < ApplicationRecord
   has_many :properties
 
   enum role: {admin: 0, seller: 1, buyer: 2}
-
-  
 end

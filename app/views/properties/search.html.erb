@@ -1,49 +1,25 @@
-<div class="input-group  rounded justify-content-center" style="margin-top:170px;">
+<div class="search_box input-group rounded justify-content-center">
   <%= form_tag(search_path, :method => "get") do %>
-    <span><%= text_field_tag :search, params[:search], class: "search form-control rounded", border_radius: "50px",placeholder: "Search..." ,style: "border: solid 1px #5dd95d;" %></span>
+    <span><%= text_field_tag :search, params[:search], class: "search form-control rounded", border_radius: "50px",placeholder: "Search..." %></span>
   <% end %>
 </div>
 <h1 class="text-center">Properties</h1><br/>
-<section class="property-grid grid">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 d-flex" style="justify-content: space-between; flex-wrap: wrap;">
-          <% @results.each do |property| %>
-            <%= link_to property, class: "link-a" do  %>
-              <%= render property%>
+<% if @results.any? %>
+  <section class="property-grid grid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 d-flex">
+            <% @results.each do |property| %>
+              <%= link_to property, class: "link-a" do  %>
+                <%= render property%>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-    </div>
-</section>
+          </div>
+      </div>
+  </section>
+<% else %>
+  <%= render "not_found"%>
+<% end %>
 
   <!-- ======= Footer ======= -->
-<section class="section-footer">
-  <div class="container">
-    <div class="row text-center justify-content-center">
-      <div class="col-sm-12 col-md-4">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand">PropEx</h3>
-          </div>
-          <div class="w-body-a">
-            <p class="w-text-a color-text-a">
-              Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-              sed aute irure.
-            </p>
-          </div>
-          <div class="w-footer-a">
-            <ul class="list-unstyled">
-              <li class="color-a">
-                <span class="color-text-a">Phone .</span> +91 12345 67890
-              </li>
-              <li class="color-a">
-                <span class="color-text-a">Email .</span> <%= mail_to "contact@propex.com", "contact@propex.com", target: '_blank' %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<%= render 'layouts/footer2' %>
