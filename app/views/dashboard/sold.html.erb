@@ -4,7 +4,6 @@
   <div class="container">
     <div class="row">
       <% @sold_property.each do |property| %>
-        <% buyer = User.find(property.buyer_id) %>
         <div class="box">
           <div class="row">
             <div class="col-sm-12 col-md-6">
@@ -21,8 +20,8 @@
               </div>
               <div class="content">
                 <p class="testimonial-text fs-5">
-                  <b>Name: </b><%=  buyer.name %><br/>
-                  <b>Email: </b><%=  buyer.email %>
+                  <b>Name: </b><%=  user(property.buyer_id).name %><br/>
+                  <b>Email: </b><%=  user(property.buyer_id).email %>
                 </p>
               </div>
             </div>
@@ -34,4 +33,4 @@
 </section>
 
 <!-- ======= Footer ======= -->
-<%= render 'layouts/footer2' %>
+<%= render 'layouts/section_footer' %>

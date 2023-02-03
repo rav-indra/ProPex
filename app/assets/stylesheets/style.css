@@ -276,3 +276,30 @@ input[type="submit"] {
 .nev span {
   margin-top: -20px;
 }
+
+.container1 {
+  height: 900px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container2 {
+  margin-top: 150px;
+}
+
+.intro-single .container {
+  margin-top: -170px;
+  width: 100%;
+}
+
+.show {
+  margin-bottom: -100px;
+}
+
+.intro-single .container .row {
+  width: 100%;
+}
+
+.section-about .about-img-box {
+  margin-left: 50px;
+}

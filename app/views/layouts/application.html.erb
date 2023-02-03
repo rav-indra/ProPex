@@ -19,7 +19,7 @@
 
   <body>
     <header style="margin-bottom: 120px;">
-      <%= render c_user(current_user.present?) %>
+      <%= render navigation(current_user.present?) %>
     </header>
       <% if notice %>
         <p style="color: green;" class="alert alert-success"><%= notice %></p>

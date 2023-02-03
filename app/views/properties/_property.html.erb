@@ -1,11 +1,7 @@
 <div class="col-md justify-content" style="float:left;">
   <div class="card-box-a card-shadow" style="border-radius:25px 10px; width:95%; height: 500px !important;">
     <div class="img-box-a overflow-hidden">
-      <% if property.images.attached? %>
-        <%= image_tag(property.images[0], :height=> 500,:width=>600, :crop=>"crop") %>
-      <% else %>
-        <%= image_tag('sorry2.jpg') %>
-      <% end %>
+      <%= image_tag(image_attached(property), :height=> 500,:width=>600, :crop=>"crop") %>
     </div>
     <div class="card-overlay">
       <div class="card-overlay-a-content">

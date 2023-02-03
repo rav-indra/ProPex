@@ -11,12 +11,9 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <th scope="row"><%= link_to image_tag(profile(user.role))%></th>
+        <th scope="row"><%= link_to image_tag("#{user.role}.png")%></th>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <%#= button_to "Edit", edit_user_registration_path(id: user.id), class: "btn btn-outline-secondary" %>
-        <%#= link_to "delete", user_registration_path(user), :method => :delete, :confirm => "You sure?" %>
-        <%#= button_to "Delete", method: :delete, class: "btn btn-outline-danger" %>
       </tr>
     <% end %>
   </tbody>

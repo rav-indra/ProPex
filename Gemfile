@@ -82,3 +82,5 @@ gem 'will_paginate-bootstrap'
 
 gem 'stripe'
 gem 'stripe_event'
+
+gem 'sass-rails'
