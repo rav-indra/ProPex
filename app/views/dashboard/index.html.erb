@@ -1,11 +1,5 @@
 <div class="dashboard">
-  <% if current_user.admin? %>
-    <%= render 'admin' %>
-  <% elsif current_user.seller?  %>
-    <%= render 'seller' %>
-  <% elsif current_user.buyer? %>
-    <%= render 'buyer' %>
-  <% end %>
+  <%= render current_user.role %>
 </div>
 <!-- ======= Footer ======= -->
 <%= render 'layouts/footer2' %>
