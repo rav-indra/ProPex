@@ -30,7 +30,11 @@
               <%= link_to image_tag("#{current_user.role}.png")%>
             </span>
             <div class="dropdown-menu">
-              <%= link_to "Dashboard", dashboard_index_path, class: "dropdown-item" %>
+              <% if current_user.admin? %>
+                <%= link_to "Dashboard", admin_root_path, class: "dropdown-item" %>
+              <% else %>
+                <%= link_to "Dashboard", dashboard_index_path, class: "dropdown-item" %>
+              <% end %>
               <%= link_to "Edit Profile",edit_user_registration_path, method: :get, class: "dropdown-item" %>
               <%= button_to "Sign out",destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>

@@ -15,6 +15,18 @@ class ApplicationController < ActionController::Base
     redirect_to users_path
   end
 
+  def authenticate_admin_user!
+    p 1111111111111111111111111111
+    raise SecurityError unless current_user.try(:admin?)
+    p 2222222222222222222222222222
+  end
+
+  rescue_from SecurityError do |exception|
+    p 3333333333333333333333333333
+    p "You are not Admin!"
+    redirect_to root_url
+  end
+
   private
   def after_sign_out_path_for(resource_or_scope)
     root_path  
