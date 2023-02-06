@@ -78,7 +78,7 @@ gem "letter_opener", group: :development
 
 # To use pagination in app
 # gem 'will_paginate', '~> 3.0'
-gem 'will_paginate-bootstrap'
+# gem 'will_paginate-bootstrap'
 
 gem 'stripe'
 gem 'stripe_event'
