@@ -307,3 +307,13 @@ input[type="submit"] {
 .error-code {
   color: red;
 }
+
+.password {
+  margin-top: 150px;
+  text-align: center;
+}
+
+.my_image_size {
+  width: 50px;
+  height: 50px;
+}

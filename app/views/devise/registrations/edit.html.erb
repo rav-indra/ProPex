@@ -14,7 +14,11 @@
       </div><br/>
 
       <div class="field">
-        <%= f.select :role, collection: User.roles.keys.to_a %>
+        <% if current_user.admin? %>
+          <%= f.select :role, collection: User.roles.keys.to_a %>
+        <%# else %>
+          <%#= f.select :role, collection: User.roles.keys.to_a, :readonly => true %>
+        <% end %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -40,7 +44,7 @@
         <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "we need your current password to confirm your changes" %>
       </div><br/>
 
-      <div class="actions" style="width:50%; margin:auto;">
+      <div class="actions">
         <%= f.submit "Update", class: "btn btn-outline-success" %>
       </div><br/>
     <% end %><br/>
