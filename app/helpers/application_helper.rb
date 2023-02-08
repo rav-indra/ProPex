@@ -19,7 +19,7 @@ module ApplicationHelper
   def navigation(is_present)
     return 'layouts/nav/public' if is_present
 
-    'layouts/nav/beforepublic'
+    'layouts/nav/before_public'
   end
 
   def user(u_id)
@@ -29,7 +29,7 @@ module ApplicationHelper
 
   def image_attached(property)
     return  property.images[0] if property.images.attached?
-    'sorry2.jpg'
+    'default.jpg'
   end
 
   def show_errors(object, field_name)

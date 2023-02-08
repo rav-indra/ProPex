@@ -4,7 +4,7 @@ class CheckoutsController < ApplicationController
 
   def create
     p 111111111111111111111111111111111
-    property = Property.find(params[:id])
+    property = Property.find_by(id: params[:id])
     p 222222222222222222222222222222222222
     p property
     p property.id

@@ -50,12 +50,5 @@ ActiveAdmin.register Property do
     f.input :price
     f.input :images, as: :file, input_html: { multiple: true }
     f.actions
-  end
-
-  # member_action :publish, method: :put do
-  #   property = Property.find(params[:id])
-  #   property.update(published_at: Time.zone.now)
-  #   redirect_to admin_property_path(property)
-  # end
-  
+  end  
 end
