@@ -1,7 +1,6 @@
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token
   skip_before_action :authenticate_user!
-  p "**************************************"
 
   def create
     payload = request.body.read
@@ -26,11 +25,8 @@ class WebhooksController < ApplicationController
     # Handle the event
     case event.type
     when 'checkout.session.completed'
-      p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
       session = event.data.object
-      p session
       property = Property.find_by(id: session.metadata.order_id)
-      p property
       property.is_paid = true
       property.buyer_id = session.metadata.cid
       property.save!

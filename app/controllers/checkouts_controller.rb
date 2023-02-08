@@ -3,11 +3,7 @@ class CheckoutsController < ApplicationController
 
 
   def create
-    p 111111111111111111111111111111111
     property = Property.find_by(id: params[:id])
-    p 222222222222222222222222222222222222
-    p property
-    p property.id
     @session = Stripe::Checkout::Session.create({
       metadata: {order_id: property.id, cid: current_user.id},
       payment_method_types: ['card'],
@@ -25,8 +21,6 @@ class CheckoutsController < ApplicationController
       success_url: root_url,
       cancel_url: "https://1ca4-2401-4900-1f3f-190d-f18d-5517-ee59-c309.ngrok.io" + '/dashboard/index',
     })
-    p 7777777777777
-    p @session
     redirect_to @session.url, allow_other_host: true
     # respond_to do |format|
     #   format.js
