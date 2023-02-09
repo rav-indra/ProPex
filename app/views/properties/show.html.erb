@@ -28,7 +28,7 @@
       <div class="carousel-inner">
       <% @property.images.each do |img| %>
         <div class="carousel-item active">
-          <%= link_to image_tag(img, height: "100%", width: "100%") %>
+          <%= link_to image_tag(img, height: "100%", width: "100%"), alt: "property_image" %>
         </div>
       <%end %>
       </div>
@@ -82,9 +82,9 @@
                   <strong>Status:</strong>
                   <span>
                     <% if @property.is_paid == false %>
-                      <span style="color: green;">UNSOLD</span>
+                      <span id="unsold">UNSOLD</span>
                     <% else %>
-                      <span style="color: red;">SOLD</span>
+                      <span id="sold">SOLD</span>
                     <% end %>
                   </span>
                 </li>

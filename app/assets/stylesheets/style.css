@@ -240,7 +240,7 @@ input[type="submit"] {
   font-size: xxx-large;
 }
 
-.container .prop_grid {
+.container .property-grid {
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -261,16 +261,8 @@ input[type="submit"] {
   color: black;
 }
 
-.not_found em {
+.not-found em {
   color: #2eca6a;
-}
-
-.prop_index {
-  margin-top: -170px;
-}
-
-.prop_index .row {
-  width: 100%;
 }
 
 .nev span {
@@ -316,4 +308,26 @@ input[type="submit"] {
 .my_image_size {
   width: 50px;
   height: 50px;
+}
+
+.container2 .carousel-inner {
+  height: 650px;
+}
+
+#unsold {
+  color: green;
+}
+
+#sold {
+  color: red;
+}
+
+.property-card {
+  float: left;
+}
+
+.property-card .card-box-a {
+  border-radius: 25px 10px;
+  width: 95%;
+  height: 500px !important;
 }
