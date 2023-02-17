@@ -21,10 +21,10 @@
     <header style="margin-bottom: 120px;">
       <%= render navigation(current_user.present?) %>
     </header>
-      <% if notice %>
-        <p style="color: green;" class="alert alert-success"><%= notice %></p>
-      <% end %>
-      <%= yield %>
+    <% if notice %>
+      <p style="color: green;" class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <%= yield %>
     <footer>
       <%= render "layouts/footer" %>
     </footer>

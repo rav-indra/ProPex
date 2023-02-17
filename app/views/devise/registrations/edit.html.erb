@@ -16,8 +16,6 @@
       <div class="field">
         <% if current_user.admin? %>
           <%= f.select :role, collection: User.roles.keys.to_a %>
-        <%# else %>
-          <%#= f.select :role, collection: User.roles.keys.to_a, :readonly => true %>
         <% end %>
       </div>
 

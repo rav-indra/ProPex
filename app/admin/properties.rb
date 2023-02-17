@@ -32,7 +32,7 @@ ActiveAdmin.register Property do
       ul do
         property.images.each do |img|
           li do 
-            link_to image_tag(img, height: "50px")
+            link_to image_tag(img, height: "50px", alt: "property_image")
           end
         end
       end
