@@ -77,10 +77,15 @@ gem "devise"
 gem "letter_opener", group: :development
 
 # To use pagination in app
-gem 'will_paginate', '~> 3.3'
+gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 
 gem 'stripe'
 gem 'stripe_event'
 
 gem 'sass-rails'
+
+
+gem 'activeadmin'
+gem 'active_admin_flat_skin'
+gem 'font-awesome-rails'

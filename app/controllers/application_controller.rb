@@ -9,10 +9,18 @@ class ApplicationController < ActionController::Base
   end
 
   def destroy
-    p 11111111111111111111111111
-    User.find(params[:id]).destroy
+    User.find_by(id: params[:id]).destroy
     flash[:success] = "User destroyed."
     redirect_to users_path
+  end
+
+  def authenticate_admin_user!
+    raise SecurityError unless current_user.try(:admin?)
+  end
+
+  rescue_from SecurityError do |exception|
+    p "You are not Admin!"
+    redirect_to root_url
   end
 
   private

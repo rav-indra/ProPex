@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   mount StripeEvent::Engine, at: '/webhooks'
   
@@ -8,7 +10,11 @@ Rails.application.routes.draw do
   
   post "webhooks/create", to: "webhooks#create"
   post "checkouts/create", to: "checkouts#create"
-  resources :properties
+  resources :properties #do 
+  #   member do 
+  #     put :publish
+  #   end
+  # end
 
   devise_for :users
   root 'public#main'
