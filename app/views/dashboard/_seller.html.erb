@@ -1,50 +1,47 @@
-<% props = Property.where(user_id: current_user.id) %>
-<% sold =  props.where(is_paid: true) %>
-<% sum = 0%>  
-<% sold.each do |sld| %>
-  <% sum = sum + sld.price %>
-<% end %>
-<div class="row" style="margin-top: 130px; justify-content: center;">
+<h1>Listed Properties</h1>
+
+<div class="row">
   <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-success shadow h-100 py-2">
-          <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fs-5">
-                          My Properties</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" style="margin-top:-30px; text-align:end; font-size:xxx-large;"><%= props.count %></div>
-                  </div>
-              </div>
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fs-5">
+              My Properties</div>
+            <div class="detail_box h5 mb-0 font-weight-bold text-black"><%= @user_properties.count %></div>
           </div>
-      </div>
-  </div> 
-
-  <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-success shadow h-100 py-2">
-          <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fs-5">
-                          Sold Properties</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" style="margin-top:-30px; text-align:end; font-size:xxx-large;"><%= sold.count %></div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>         
-</div> 
-
-<h1 style="text-align:center;">Listed Properties</h1>
-
-<section class="property-grid grid">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 d-flex" style="justify-content: space-between; flex-wrap: wrap;">
-          <% props.each do |property| %>
-            <%= link_to property, class: "link-a" do  %>
-              <%= render property %>
-            <% end %>
-          <% end %>
         </div>
       </div>
+    </div>
+  </div> 
+  
+  <div class="col-xl-3 col-md-6 mb-4">
+    <%= link_to dashboard_sold_path do  %>
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1 fs-5">
+                Sold Properties</div>
+              <div class="detail_box h5 mb-0 font-weight-bold"><%= @sold_property.count %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>        
+  </div> 
+</div> 
+
+<section class="property-grid grid">
+  <div class="container">
+    <div class="row">
+      <div class="prop_grid col-sm-12 d-flex">
+        <% @user_properties.each do |property| %>
+          <%= link_to property, class: "link-a" do  %>
+            <%= render property %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </section><!-- End Property Grid Single-->

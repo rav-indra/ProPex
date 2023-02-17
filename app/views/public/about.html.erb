@@ -1,85 +1,84 @@
 <main id="main">
-
-<!-- ======= Intro Single ======= -->
-<section class="intro-single">
-  <div class="container" style="margin-top:-170px">
-    <div class="row" style="width: 100%;">
-      <div class="col-md-12 col-lg-8">
-        <div class="title-single-box">
-          <h1 class="title-single">The Best platform to list or <br/>buy Property.</h1>
+  <!-- ======= Intro Single ======= -->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">The Best platform to list or <br/>buy Property.</h1>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <%= link_to "Home", root_path %>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                About
+              </li>
+            </ol>
+          </nav>
         </div>
       </div>
-      <div class="col-md-12 col-lg-4">
-        <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <%= link_to "Home", root_path %>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">
-              About
-            </li>
-          </ol>
-        </nav>
+    </div>
+  </section><!-- End Intro Single-->
+
+  <!-- ======= About Section ======= -->
+  <section class="section-about">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 position-relative">
+          <div class="about-img-box">
+            <%= link_to image_tag('Propes/f1.jpg') %>
+          </div>
+          <div class="sinse-box">
+            <h3 class="sinse-title">PropEx
+              <span></span>
+              <br> Since 2023
+            </h3>
+            <p>Dedicated to results</p>
+          </div>
+        </div>
+        <div class="col-md-12 section-t8 position-relative">
+          <div class="row">
+            <div class="col-md-6 col-lg-5">
+              <%= link_to image_tag('img/plan2.jpg',width: 650) %>
+            </div>
+            <div class="col-lg-2  d-none d-lg-block position-relative">
+              <div class="title-vertical d-flex justify-content-start">
+                <span>EstateAgency Exclusive Property</span>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-5 section-md-t3">
+              <div class="title-box-d">
+                <h3 class="title-d">Prop<span class="color-d">Ex</span>
+                </h3>
+              </div>
+              <p class="color-text-a">
+                Launched in 2023, PropEx, India's No. 1 property portal, deals with every aspect of the consumer's needs in the real estate industry. It is an online forum where buyers, sellers and brokers/agents can exchange information about real estate properties quickly, effectively and inexpensively.
+              </p>
+              <p class="color-text-a">
+                At PropEx, you can advertise a property, search for a property, browse through properties, build your own property microsite, and keep yourself updated.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======Team Section ======= -->
+  <section class="section-agents section-t8">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="title-wrap d-flex justify-content-center">
+        <div class="title-box">
+          <h2 class="title-a">Meet Our Team</h2>
+        </div>
       </div>
     </div>
   </div>
-</section><!-- End Intro Single-->
-
-<!-- ======= About Section ======= -->
-<section class="section-about">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 position-relative">
-        <div class="about-img-box" style="margin-left:50px;">
-          <%= link_to image_tag('Propes/f1.jpg') %>
-        </div>
-        <div class="sinse-box">
-          <h3 class="sinse-title">PropEx
-            <span></span>
-            <br> Since 2023
-          </h3>
-          <p>Dedicated to results</p>
-        </div>
-      </div>
-      <div class="col-md-12 section-t8 position-relative">
-        <div class="row">
-          <div class="col-md-6 col-lg-5">
-            <%= link_to image_tag('img/plan2.jpg',width: 650) %>
-          </div>
-          <div class="col-lg-2  d-none d-lg-block position-relative" style="margin-top: 60px;">
-            <div class="title-vertical d-flex justify-content-start">
-              <span>EstateAgency Exclusive Property</span>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5 section-md-t3">
-            <div class="title-box-d">
-              <h3 class="title-d">Prop<span class="color-d">Ex</span>
-              </h3>
-            </div>
-            <p class="color-text-a">
-              Launched in 2023, PropEx, India's No. 1 property portal, deals with every aspect of the consumer's needs in the real estate industry. It is an online forum where buyers, sellers and brokers/agents can exchange information about real estate properties quickly, effectively and inexpensively.
-            </p>
-            <p class="color-text-a">
-              At PropEx, you can advertise a property, search for a property, browse through properties, build your own property microsite, and keep yourself updated.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =======Team Section ======= -->
-<section class="section-agents section-t8">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="title-wrap d-flex justify-content-center">
-          <div class="title-box">
-            <h2 class="title-a">Meet Our Team</h2>
-          </div>
-        </div>
-      </div>
-    </div>
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -115,7 +114,7 @@
       <div class="col-md-4">
         <div class="card-box-d">
           <div class="card-img-d">
-          <%= link_to image_tag('img/agent-6.jpg', :width=>450, :crop=>"fit") %>
+            <%= link_to image_tag('img/agent-6.jpg', :width=>450, :crop=>"fit") %>
           </div>
           <div class="card-overlay card-overlay-hover">
             <div class="card-header-d">
@@ -174,37 +173,9 @@
       </div>
     </div>
   </div>
-</section><!-- End About Section-->
-
+  </section><!-- End About Section-->
+  
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
-<section class="section-footer">
-  <div class="container">
-    <div class="row text-center justify-content-center">
-      <div class="col-sm-12 col-md-4">
-        <div class="widget-a">
-          <div class="w-header-a">
-            <h3 class="w-title-a text-brand">PropEx</h3>
-          </div>
-          <div class="w-body-a">
-            <p class="w-text-a color-text-a">
-              Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-              sed aute irure.
-            </p>
-          </div>
-          <div class="w-footer-a">
-            <ul class="list-unstyled">
-              <li class="color-a">
-                <span class="color-text-a">Phone .</span> +91 12345 67890
-              </li>
-              <li class="color-a">
-                <span class="color-text-a">Email .</span> <%= mail_to "contact@propex.com", "contact@propex.com", target: '_blank' %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<%= render 'layouts/section_footer' %>

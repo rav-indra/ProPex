@@ -1,9 +1,9 @@
-<h1>Purchased Properties</h1>
+<h1 class="sold">Sold Properties</h1>
 
 <section class="property-grid grid">
   <div class="container">
     <div class="row">
-      <% @buyer_props.each do |property| %>
+      <% @sold_property.each do |property| %>
         <div class="box">
           <div class="row">
             <div class="col-sm-12 col-md-6">
@@ -14,16 +14,14 @@
               </div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <%# Propert Details %>
               <%= render partial: "property_details", locals: {property: property} %>
-              <%# Seller Details %>
               <div class="testimonial-author-box text-center">
-                <h2>Seller Details:</h2>
+                <h2>Buyer Details:</h2>
               </div>
               <div class="content">
                 <p class="testimonial-text fs-5">
-                  <b>Name: </b><%= user(property.user_id).name %><br/>
-                  <b>Email: </b><%= user(property.user_id).email %>
+                  <b>Name: </b><%=  user(property.buyer_id).name %><br/>
+                  <b>Email: </b><%=  user(property.buyer_id).email %>
                 </p>
               </div>
             </div>
@@ -32,4 +30,7 @@
       <% end %>
     </div>
   </div>
-</section><!-- End Property Grid Single-->
+</section>
+
+<!-- ======= Footer ======= -->
+<%= render 'layouts/section_footer' %>

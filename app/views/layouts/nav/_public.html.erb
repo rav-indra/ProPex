@@ -6,7 +6,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="/"><h1><b>Prop<span class="color-b">Ex</span></b></h1></a>
+      <a class="navbar-brand text-brand fs-1" href="/"><strong>Prop<span class="color-b">Ex</span></strong></a>
 
       <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
         <ul class="navbar-nav">
@@ -25,15 +25,10 @@
             <%= link_to "About", public_about_path, class: "nav-link fs-5" %>
           </li>
 
-          <li class="nav-item dropdown">
-            <span style="margin-top:-20px;" class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <% if current_user.admin? %> 
-                <%= link_to image_tag('admin.png') %>
-              <% elsif current_user.seller? %>
-                <%= link_to image_tag('seller.png') %>
-              <% elsif current_user.buyer? %>
-                <%= link_to image_tag('buyer.png') %>
-              <% end %></span>
+          <li class="nev nav-item dropdown">
+            <span class="nav-link" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= link_to image_tag("#{current_user.role}.png")%>
+            </span>
             <div class="dropdown-menu">
               <%= link_to "Dashboard", dashboard_index_path, class: "dropdown-item" %>
               <%= link_to "Edit Profile",edit_user_registration_path, method: :get, class: "dropdown-item" %>

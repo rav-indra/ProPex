@@ -1,6 +1,5 @@
 module ApplicationHelper
   # helper_method :resource_name, :resource, :devise_mapping, :resource_class
-
   def resource_name
     :user
   end
@@ -16,14 +15,21 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
-  def profile(role)
-    if role == "admin"
-      'admin.png'
-    elsif role == "seller"
-      'seller.png'
-    else
-      'buyer.png'
-    end
+
+  def navigation(is_present)
+    return 'layouts/nav/public' if is_present
+
+    'layouts/nav/beforepublic'
+  end
+
+  def user(u_id)
+    user = User.find_by(id: u_id)
+    user
+  end
+
+  def image_attached(property)
+    return  property.images[0] if property.images.attached?
+    'sorry2.jpg'
   end
 
   def show_errors(object, field_name)

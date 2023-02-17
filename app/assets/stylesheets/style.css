@@ -11,12 +11,28 @@ body {
 }
 
 .frm form {
-  border-top: 2px solid #5ea4f3;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+  border-radius: 10px;
+  border-top: 2px solid #2eca6a;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
   background-color: #ffffff;
   padding: 0;
   max-width: 600px;
   margin: auto;
+}
+
+.frm input,
+select,
+input[type="file"] {
+  font-size: .8rem;
+  border-radius: 0.8rem;
+  padding: .5rem 1rem;
+  width: 70%;
+  outline-color: #a8ebb8;
+  border: 1px solid gray;
+}
+
+input[type="submit"] {
+  border: 1px solid;
 }
 
 
@@ -190,4 +206,104 @@ select {
     width: 100%;
     padding: 0;
   }
+}
+
+.frm .field label {
+  font-size: larger;
+}
+
+.frm .actions,
+input[type="submit"] {
+  font-size: larger;
+  width: 50%;
+  margin: auto;
+}
+
+.frm div label {
+  display: block;
+  font-size: larger;
+}
+
+.dashboard h1,
+.sold {
+  margin-top: 130px;
+  text-align: center;
+}
+
+.dashboard .row {
+  justify-content: center;
+}
+
+.dashboard .row .detail_box {
+  margin-top: -30px;
+  text-align: end;
+  font-size: xxx-large;
+}
+
+.container .prop_grid {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input-group .search {
+  border: solid 1px #5dd95d;
+}
+
+.input-group {
+  margin-top: -100px;
+}
+
+.search_box {
+  margin-top: 170px;
+}
+
+.not_found h1 {
+  color: black;
+}
+
+.not_found em {
+  color: #2eca6a;
+}
+
+.prop_index {
+  margin-top: -170px;
+}
+
+.prop_index .row {
+  width: 100%;
+}
+
+.nev span {
+  margin-top: -20px;
+}
+
+.container1 {
+  height: 900px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container2 {
+  margin-top: 150px;
+}
+
+.intro-single .container {
+  margin-top: -170px;
+  width: 100%;
+}
+
+.show {
+  margin-bottom: -100px;
+}
+
+.intro-single .container .row {
+  width: 100%;
+}
+
+.section-about .about-img-box {
+  margin-left: 50px;
+}
+
+.error_code {
+  color: red;
 }
